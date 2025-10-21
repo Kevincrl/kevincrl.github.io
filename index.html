@@ -8,9 +8,13 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Mon Portfolio</h1>
-            <p>Apprenti IT chez <strong>Stellantis Borny</strong> | Étudiant en <strong>BTS SIO</strong> à <strong>Robert Schuman</strong></p>
+        <div class="container header-content">
+            <img src="profil.jpg" alt="Photo de profil" class="profile-pic">
+            <div class="header-text">
+                <h1>Portfolio d'un Apprenti IT</h1>
+                <p>Étudiant en <strong>BTS SIO</strong> à <strong>Robert Schuman</strong> | Alternant chez <strong>Stellantis Borny</strong></p>
+                <a href="cv.pdf" class="cv-button" download>📄 Télécharger mon CV</a>
+            </div>
         </div>
     </header>
 
@@ -19,6 +23,7 @@
             <li><a href="#apropos">À propos</a></li>
             <li><a href="#competences">Compétences</a></li>
             <li><a href="#projets">Projets</a></li>
+            <li><a href="#veille">Veille</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -26,21 +31,21 @@
     <section id="apropos" class="container">
         <h2>À propos</h2>
         <p>
-            Je suis actuellement en <strong>BTS Services Informatiques aux Organisations (SIO)</strong> à Robert Schuman.
-            En parallèle, j’effectue mon alternance au sein de <strong>Stellantis Borny</strong> en tant qu’<strong>apprenti IT</strong>,
-            où je participe à la gestion du parc informatique, à l’automatisation de tâches, et au support technique.
+            Je suis un étudiant passionné en <strong>BTS Services Informatiques aux Organisations (SIO)</strong> au lycée Robert Schuman.
+            En alternance chez <strong>Stellantis Borny</strong> en tant qu’<strong>apprenti IT</strong>,
+            je participe à la gestion du parc informatique, au support technique et à la mise en place d’outils de supervision.
         </p>
     </section>
 
     <section id="competences" class="container">
         <h2>Compétences</h2>
         <div class="skills">
-            <div class="skill">Administration Windows & Linux</div>
-            <div class="skill">Réseaux & Sécurité</div>
-            <div class="skill">Base de données (MySQL, SQL Server)</div>
-            <div class="skill">Développement Web (HTML, CSS, JS, PHP)</div>
-            <div class="skill">Automatisation (PowerShell, Bash)</div>
-            <div class="skill">Supervision (Grafana, Prometheus)</div>
+            <div class="skill">🖥️ Administration Windows & Linux</div>
+            <div class="skill">🌐 Réseaux & Sécurité</div>
+            <div class="skill">🗃️ Base de données (MySQL, SQL Server)</div>
+            <div class="skill">💻 Développement Web (HTML, CSS, JS, PHP)</div>
+            <div class="skill">⚙️ Automatisation (PowerShell, Bash)</div>
+            <div class="skill">📊 Supervision (Grafana, Prometheus)</div>
         </div>
     </section>
 
@@ -53,13 +58,29 @@
             </div>
             <div class="project">
                 <h3>💾 Sauvegarde MySQL automatisée</h3>
-                <p>Développement d’un script PowerShell pour effectuer des sauvegardes quotidiennes à chaud et générer un plan de restauration.</p>
+                <p>Script PowerShell pour sauvegarder automatiquement la base MySQL du serveur et générer un plan de restauration.</p>
             </div>
             <div class="project">
                 <h3>🖥️ Gestion du parc informatique</h3>
-                <p>Mise en place d’un inventaire automatisé des postes de travail via scripts et supervision des serveurs.</p>
+                <p>Développement d’un inventaire automatisé des postes et supervision du réseau de l’usine Stellantis.</p>
             </div>
         </div>
+    </section>
+
+    <section id="veille" class="container">
+        <h2>Veille technologique</h2>
+        <p>
+            Ma veille technologique porte sur les sujets liés à <strong>la cybersécurité</strong> et à <strong>l’automatisation des infrastructures IT</strong>.
+            Je m’informe régulièrement via des sites spécialisés tels que :
+        </p>
+        <ul class="veille-list">
+            <li><a href="https://www.zdnet.fr/" target="_blank">ZDNet</a> – Actualités informatiques et cybersécurité</li>
+            <li><a href="https://www.thehackersnews.com/" target="_blank">The Hacker News</a> – Vulnérabilités et menaces récentes</li>
+            <li><a href="https://dev.to/" target="_blank">Dev.to</a> – Développement, DevOps et automatisation</li>
+        </ul>
+        <p>
+            Cette veille me permet de rester à jour sur les tendances technologiques et d’adapter mes compétences aux besoins du monde professionnel.
+        </p>
     </section>
 
     <section id="contact" class="container">
