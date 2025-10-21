@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Présentation – Portfolio BTS SIO</title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css" id="theme">
+
+  <style>
+    /* Style cohérent avec ton portfolio */
+    .reveal section h1, 
+    .reveal section h2, 
+    .reveal section h3 {
+      color: #004b9b;
+    }
+
+    .reveal a {
+      color: #0073e6;
+      text-decoration: none;
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background: #004b9b;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 2000;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #0073e6;
+    }
+
+    /* Mode sombre Reveal.js */
+    body.dark-mode .reveal {
+      background-color: #1c1c1c !important;
+      color: #e8e8e8;
+    }
+    body.dark-mode .reveal section h1, 
+    body.dark-mode .reveal section h2 {
+      color: #4da6ff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Bouton retour vers le portfolio -->
+  <a href="index.html" class="back-btn">← Retour</a>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Slide 1 -->
+      <section>
+        <h1>Présentation orale – BTS SIO SISR</h1>
+        <p><strong>Apprenti IT</strong> chez Stellantis Borny</p>
+        <p>Étudiant au lycée <strong>Robert Schuman</strong></p>
+      </section>
+
+      <!-- Slide 2 -->
+      <section>
+        <h2>Parcours</h2>
+        <ul>
+          <li>BTS SIO, option SISR</li>
+          <li>Alternance en support IT chez Stellantis Borny</li>
+          <li>Intéressé par l’automatisation et la cybersécurité</li>
+        </ul>
+      </section>
+
+      <!-- Slide 3 -->
+      <section>
+        <h2>Projets réalisés</h2>
+        <ul>
+          <li>Dashboard Grafana connecté à MySQL</li>
+          <li>Script PowerShell de sauvegarde MySQL automatisée</li>
+          <li>Infrastructure virtualisée pour tests internes</li>
+        </ul>
+      </section>
+
+      <!-- Slide 4 -->
+      <section>
+        <h2>Veille technologique</h2>
+        <p>Suivi régulier sur :</p>
+        <ul>
+          <li>Infrastructure as Code (Terraform, Ansible)</li>
+          <li>Sécurité des conteneurs Docker/Kubernetes</li>
+          <li>Automatisation et supervision IT</li>
+        </ul>
+      </section>
+
+      <!-- Slide 5 -->
+      <section>
+        <h2>Merci !</h2>
+        <p>📧 prenom.nom@example.com</p>
+        <p>🔗 <a href="https://www.linkedin.com/">LinkedIn</a></p>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+  <script>
+    // Initialisation de Reveal.js
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      transition: 'fade',
+    });
+
+    // Synchronisation du thème clair/sombre avec le portfolio
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+      document.body.classList.add('dark-mode');
+      document.getElementById('theme').setAttribute('href', 'https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css');
+    }
+  </script>
+</body>
+</html>
