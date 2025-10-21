@@ -1,225 +1,96 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio SISR – Apprenti IT | BTS SIO Robert Schuman</title>
-
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Ton style -->
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio – Apprenti BTS SIO</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- THEME TOGGLE -->
-  <button id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Basculer thème clair/sombre">🌙</button>
+    <header>
+        <div class="container header-content">
+            <img src="profil.jpg" alt="Photo de profil" class="profile-pic">
+            <div class="header-text">
+                <h1>Portfolio d'un Apprenti IT</h1>
+                <p>Étudiant en <strong>BTS SIO</strong> à <strong>Robert Schuman</strong> | Alternant chez <strong>Stellantis Borny</strong></p>
+                <a href="cv.pdf" class="cv-button" download>📄 Télécharger mon CV</a>
+            </div>
+        </div>
+    </header>
 
-  <!-- HEADER / ACCUEIL -->
-  <header class="header-section text-center py-5">
-    <div class="container">
-      <img src="profil.jpg" alt="Photo de profil" class="profile-pic mb-3" onerror="this.style.visibility='hidden'">
-      <h1 class="display-6 fw-bold">Portfolio SISR — Apprenti IT</h1>
-      <p class="lead mb-2">Étudiant en <strong>BTS SIO</strong> à <strong>Robert Schuman</strong> — Alternant chez <strong>Stellantis Borny</strong></p>
-      <p class="mb-3 fst-italic">Ce site présente mes compétences SISR, mes projets d'infrastructure et ma veille technologique.</p>
-      <a href="cv.pdf" class="btn btn-primary btn-lg me-2" download>📄 Télécharger mon CV</a>
-      <a href="#presentation" class="btn btn-outline-primary btn-lg">🎤 Support d'oral</a>
-    </div>
-  </header>
-
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Portfolio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Basculer la navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navMenu">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projets">Projets & Infra</a></li>
-          <li class="nav-item"><a class="nav-link" href="#veille">Veille</a></li>
-          <li class="nav-item"><a class="nav-link" href="#presentation">Présentation</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    <nav>
+        <ul>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#veille">Veille</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- COMPÉTENCES (PÔLES SISR) -->
-  <section id="competences" class="container py-5 fade-section">
-    <h2 class="section-title">Compétences Techniques — Pôle SISR</h2>
+    <section id="apropos" class="container">
+        <h2>À propos</h2>
+        <p>
+            Je suis un étudiant passionné en <strong>BTS Services Informatiques aux Organisations (SIO)</strong> au lycée Robert Schuman.
+            En alternance chez <strong>Stellantis Borny</strong> en tant qu’<strong>apprenti IT</strong>,
+            je participe à la gestion du parc informatique, au support technique et à la mise en place d’outils de supervision.
+        </p>
+    </section>
 
-    <div class="row gy-4">
-      <div class="col-12 col-md-6 col-lg-3">
-        <article class="card h-100">
-          <div class="card-body">
-            <h3 class="card-title">Systèmes</h3>
-            <ul>
-              <li>Administration Windows Server & Linux</li>
-              <li>Active Directory, GPO, gestion comptes</li>
-              <li>Scripts PowerShell / Bash</li>
-            </ul>
-          </div>
-        </article>
-      </div>
+    <section id="competences" class="container">
+        <h2>Compétences</h2>
+        <div class="skills">
+            <div class="skill">🖥️ Administration Windows & Linux</div>
+            <div class="skill">🌐 Réseaux & Sécurité</div>
+            <div class="skill">🗃️ Base de données (MySQL, SQL Server)</div>
+            <div class="skill">💻 Développement Web (HTML, CSS, JS, PHP)</div>
+            <div class="skill">⚙️ Automatisation (PowerShell, Bash)</div>
+            <div class="skill">📊 Supervision (Grafana, Prometheus)</div>
+        </div>
+    </section>
 
-      <div class="col-12 col-md-6 col-lg-3">
-        <article class="card h-100">
-          <div class="card-body">
-            <h3 class="card-title">Réseaux</h3>
-            <ul>
-              <li>VLAN, routage, DNS, DHCP</li>
-              <li>Firewalling, VPN, sécurité perimétrique</li>
-              <li>Monitoring (Grafana / Prometheus)</li>
-            </ul>
-          </div>
-        </article>
-      </div>
+    <section id="projets" class="container">
+        <h2>Projets</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>📊 Dashboard Grafana</h3>
+                <p>Création d’un tableau de bord connecté à une base MySQL pour suivre l’état de production et les alertes en temps réel.</p>
+            </div>
+            <div class="project">
+                <h3>💾 Sauvegarde MySQL automatisée</h3>
+                <p>Script PowerShell pour sauvegarder automatiquement la base MySQL du serveur et générer un plan de restauration.</p>
+            </div>
+            <div class="project">
+                <h3>🖥️ Gestion du parc informatique</h3>
+                <p>Développement d’un inventaire automatisé des postes et supervision du réseau de l’usine Stellantis.</p>
+            </div>
+        </div>
+    </section>
 
-      <div class="col-12 col-md-6 col-lg-3">
-        <article class="card h-100">
-          <div class="card-body">
-            <h3 class="card-title">Virtualisation / Conteneurs</h3>
-            <ul>
-              <li>VMware, Hyper-V</li>
-              <li>Docker / Compose, introduction Kubernetes</li>
-              <li>IaC : Terraform / Ansible (notions)</li>
-            </ul>
-          </div>
-        </article>
-      </div>
+    <section id="veille" class="container">
+        <h2>Veille technologique</h2>
+        <p>
+            Ma veille technologique porte sur les sujets liés à <strong>la cybersécurité</strong> et à <strong>l’automatisation des infrastructures IT</strong>.
+            Je m’informe régulièrement via des sites spécialisés tels que :
+        </p>
+        <ul class="veille-list">
+            <li><a href="https://www.zdnet.fr/" target="_blank">ZDNet</a> – Actualités informatiques et cybersécurité</li>
+            <li><a href="https://www.thehackersnews.com/" target="_blank">The Hacker News</a> – Vulnérabilités et menaces récentes</li>
+            <li><a href="https://dev.to/" target="_blank">Dev.to</a> – Développement, DevOps et automatisation</li>
+        </ul>
+        <p>
+            Cette veille me permet de rester à jour sur les tendances technologiques et d’adapter mes compétences aux besoins du monde professionnel.
+        </p>
+    </section>
 
-      <div class="col-12 col-md-6 col-lg-3">
-        <article class="card h-100">
-          <div class="card-body">
-            <h3 class="card-title">Automatisation</h3>
-            <ul>
-              <li>Automatisation des déploiements</li>
-              <li>Scripting, CI/CD (ex : GitHub Actions)</li>
-              <li>Backups automatisés, plan de restauration</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <p>📧 <a href="mailto:prenom.nom@example.com">prenom.nom@example.com</a></p>
+        <p>🔗 <a href="https://www.linkedin.com/">LinkedIn</a></p>
+    </section>
 
-  <!-- PROJETS & INFRASTRUCTURES (études de cas) -->
-  <section id="projets" class="container py-5 fade-section">
-    <h2 class="section-title">Projets & Infrastructures — Études de cas</h2>
-
-    <div class="row gy-4 projects-grid">
-      <div class="col-12 col-md-6 col-lg-4">
-        <article class="card h-100">
-          <div class="card-body">
-            <h3 class="card-title">Dashboard Grafana — Supervision</h3>
-            <p class="card-text">Tableau de bord connecté à une base MySQL pour surveiller KPIs de production et envoyer des alertes.</p>
-            <img src="grafana.png" alt="Capture Grafana" class="img-fluid rounded mt-2" onerror="this.style.display='none'">
-            <p class="mt-2 small text-muted">Technos : MySQL, Grafana, alerting.</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-4">
-        <article class="card h-100">
-          <div class="card-body">
-            <h3 class="card-title">Sauvegarde automatisée — MySQL</h3>
-            <p class="card-text">Script PowerShell / Bash pour sauvegardes à chaud, rotation et plan de restauration documenté.</p>
-            <img src="backup.png" alt="Schéma sauvegarde" class="img-fluid rounded mt-2" onerror="this.style.display='none'">
-            <p class="mt-2 small text-muted">Technos : PowerShell, scripts, politique de rétention.</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-4">
-        <article class="card h-100">
-          <div class="card-body">
-            <h3 class="card-title">Infra virtualisée — Lab VMware</h3>
-            <p class="card-text">Environnement de test virtualisé avec supervision réseau et déploiement de conteneurs pour tests applicatifs.</p>
-            <img src="infra.png" alt="Infrastructure" class="img-fluid rounded mt-2" onerror="this.style.display='none'">
-            <p class="mt-2 small text-muted">Technos : VMware, Docker, VLAN, scripts d'automatisation.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- VEILLE TECHNOLOGIQUE -->
-  <section id="veille" class="container py-5 fade-section">
-    <h2 class="section-title">Veille technologique</h2>
-    <p>Thèmes suivis régulièrement :</p>
-    <ul class="veille-list">
-      <li>Infrastructure as Code : Terraform / Ansible</li>
-      <li>Sécurité des conteneurs (Docker / Kubernetes)</li>
-      <li>CI/CD & automatisation des pipelines</li>
-      <li>Observabilité et monitoring</li>
-    </ul>
-    <p>Sources : <a href="https://dev.to" target="_blank" rel="noopener">Dev.to</a>, <a href="https://www.zdnet.fr" target="_blank" rel="noopener">ZDNet</a>, <a href="https://thehackernews.com" target="_blank" rel="noopener">The Hacker News</a></p>
-  </section>
-
-  <!-- PRÉSENTATION ORALE -->
-  <section id="presentation" class="container py-5 fade-section text-center">
-    <h2 class="section-title">Présentation Orale — Support</h2>
-    <p>Télécharge le support de ma présentation (format PDF) pour la partie orale.</p>
-    <a href="presentation.pdf" class="btn btn-outline-primary btn-lg" download>🎤 Télécharger la présentation</a>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="container py-5 fade-section text-center">
-    <h2 class="section-title">Contact</h2>
-    <p>📧 <a href="mailto:prenom.nom@example.com">prenom.nom@example.com</a></p>
-    <p>🔗 <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></p>
-  </section>
-
-  <footer class="py-3 text-center footer-custom">
-    © <span id="year"></span> — Portfolio SISR | Apprenti IT — Stellantis Borny — BTS SIO Robert Schuman
-  </footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Script theme + animation -->
-  <script>
-    // Fill year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Theme toggle (appliqué sur <html> via data-theme)
-    const htmlEl = document.documentElement;
-    const toggle = document.getElementById('themeToggle');
-
-    // Charger préférence
-    const saved = localStorage.getItem('portfolio-theme');
-    if (saved === 'dark') {
-      htmlEl.setAttribute('data-theme', 'dark');
-      toggle.textContent = '☀️';
-      toggle.setAttribute('aria-pressed','true');
-    } else {
-      htmlEl.setAttribute('data-theme', 'light');
-      toggle.textContent = '🌙';
-      toggle.setAttribute('aria-pressed','false');
-    }
-
-    toggle.addEventListener('click', () => {
-      const current = htmlEl.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      const next = current === 'dark' ? 'light' : 'dark';
-      htmlEl.setAttribute('data-theme', next);
-      localStorage.setItem('portfolio-theme', next);
-      toggle.textContent = next === 'dark' ? '☀️' : '🌙';
-      toggle.setAttribute('aria-pressed', next === 'dark' ? 'true' : 'false');
-    });
-
-    // IntersectionObserver pour apparition des sections (fade-in)
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.fade-section').forEach(sec => observer.observe(sec));
-  </script>
+    <footer>
+        <p>© 2025 – Portfolio BTS SIO | Réalisé par un apprenti IT chez Stellantis Borny</p>
+    </footer>
 </body>
 </html>
