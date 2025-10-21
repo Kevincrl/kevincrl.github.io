@@ -9,6 +9,7 @@ body {
     background-color: #f5f7fa;
     color: #1f1f1f;
     scroll-behavior: smooth;
+    transition: background 0.4s, color 0.4s;
 }
 
 .container {
@@ -16,6 +17,29 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 60px 0;
+}
+
+/* ====== BOUTON THEME ====== */
+.theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: white;
+    border-radius: 50%;
+    font-size: 1.4em;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    z-index: 100;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
 }
 
 /* ====== HEADER ====== */
@@ -193,4 +217,48 @@ footer {
     color: white;
     padding: 20px 0;
     font-size: 0.9em;
+}
+
+/* ====== MODE SOMBRE ====== */
+.dark-mode {
+    background-color: #1c1c1c;
+    color: #e8e8e8;
+}
+
+.dark-mode header {
+    background: linear-gradient(135deg, #0a1a33, #003366);
+}
+
+.dark-mode nav {
+    background-color: #111d33;
+}
+
+.dark-mode nav a:hover {
+    background-color: #e8e8e8;
+    color: #0a1a33;
+}
+
+.dark-mode .skill,
+.dark-mode .project {
+    background: #222;
+    box-shadow: 0 3px 8px rgba(255,255,255,0.05);
+}
+
+.dark-mode .cv-button {
+    background: #222;
+    color: #fff;
+}
+
+.dark-mode .cv-button:hover {
+    background: #fff;
+    color: #003366;
+}
+
+.dark-mode h2 {
+    color: #4da6ff;
+    border-left-color: #4da6ff;
+}
+
+.dark-mode .veille-list a {
+    color: #4da6ff;
 }
