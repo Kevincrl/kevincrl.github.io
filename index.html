@@ -1,117 +1,197 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio – Apprenti BTS SIO</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio SISR – Apprenti IT | BTS SIO Robert Schuman</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <div class="theme-toggle" id="theme-toggle" title="Changer de thème">🌙</div>
+<body data-bs-theme="light">
 
-        <div class="container header-content">
-            <img src="profil.jpg" alt="Photo de profil" class="profile-pic">
-            <div class="header-text">
-                <h1>PORTFOLIO CIRILLO KEVIN</h1>
-                <p>Étudiant en <strong>BTS SIO</strong> à <strong>Robert Schuman</strong> | Alternant chez <strong>Stellantis Borny</strong></p>
-                <a href="cv.pdf" class="cv-button" download>📄 Télécharger mon CV</a>
-            </div>
-        </div>
-    </header>
+  <!-- ====== BOUTON MODE SOMBRE ====== -->
+  <div class="theme-toggle" id="theme-toggle" title="Changer de thème">🌙</div>
 
-    <nav>
-        <ul>
-            <li><a href="#apropos">À propos</a></li>
-            <li><a href="#competences">Compétences</a></li>
-            <li><a href="#projets">Projets</a></li>
-            <li><a href="#veille">Veille</a></li>
-            <li><a href="#contact">Contact</a></li>
+  <!-- ====== ACCUEIL ====== -->
+  <header class="text-center py-5 bg-gradient text-light">
+    <img src="profil.jpg" alt="Photo de profil" class="profile-pic mb-3">
+    <h1 class="fw-bold">Portfolio SISR – Apprenti IT</h1>
+    <p class="lead">Étudiant en <strong>BTS SIO</strong> à <strong>Robert Schuman</strong> | Alternant chez <strong>Stellantis Borny</strong></p>
+    <p class="fst-italic">"Ce site a été conçu pour présenter mon parcours, mes compétences et mes réalisations dans le domaine des systèmes et réseaux."</p>
+    <a href="cv.pdf" class="btn btn-light mt-3 fw-bold" download>📄 Télécharger mon CV</a>
+  </header>
+
+  <!-- ====== NAVBAR ====== -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#accueil">Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projets">Projets & Infrastructures</a></li>
+          <li class="nav-item"><a class="nav-link" href="#veille">Veille</a></li>
+          <li class="nav-item"><a class="nav-link" href="#presentation">Présentation Orale</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
-    </nav>
+      </div>
+    </div>
+  </nav>
 
-    <section id="apropos" class="container">
-        <h2>À propos</h2>
-        <p>
-            Je suis un étudiant passionné en <strong>BTS Services Informatiques aux Organisations (SIO)</strong> au lycée Robert Schuman.
-            En alternance chez <strong>Stellantis Borny</strong> en tant qu’<strong>apprenti IT</strong>,
-            je participe à la gestion du parc informatique, au support technique et à la mise en place d’outils de supervision.
-        </p>
-    </section>
-
-    <section id="competences" class="container">
-        <h2>Compétences</h2>
-        <div class="skills">
-            <div class="skill">🖥️ Administration Windows & Linux</div>
-            <div class="skill">🌐 Réseaux & Sécurité</div>
-            <div class="skill">🗃️ Base de données (MySQL, SQL Server)</div>
-            <div class="skill">💻 Développement Web (HTML, CSS, JS, PHP)</div>
-            <div class="skill">⚙️ Automatisation (PowerShell, Bash)</div>
-            <div class="skill">📊 Supervision (Grafana, Prometheus)</div>
+  <!-- ====== COMPÉTENCES TECHNIQUES (SISR) ====== -->
+  <section id="competences" class="container py-5 fade-section">
+    <h2 class="border-start border-4 border-primary ps-3 mb-4">Compétences Techniques (Pôle SISR)</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title text-primary">🖥️ Systèmes</h5>
+            <ul>
+              <li>Administration Windows & Linux</li>
+              <li>Active Directory, GPO</li>
+              <li>Scripts PowerShell / Bash</li>
+            </ul>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section id="projets" class="container">
-        <h2>Projets</h2>
-        <div class="projects">
-            <div class="project">
-                <h3>📊 Dashboard Grafana</h3>
-                <p>Création d’un tableau de bord connecté à une base MySQL pour suivre l’état de production et les alertes en temps réel.</p>
-            </div>
-            <div class="project">
-                <h3>💾 Sauvegarde MySQL automatisée</h3>
-                <p>Script PowerShell pour sauvegarder automatiquement la base MySQL du serveur et générer un plan de restauration.</p>
-            </div>
-            <div class="project">
-                <h3>🖥️ Gestion du parc informatique</h3>
-                <p>Développement d’un inventaire automatisé des postes et supervision du réseau de l’usine Stellantis.</p>
-            </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title text-primary">🌐 Réseaux</h5>
+            <ul>
+              <li>Configuration VLAN, DHCP, DNS</li>
+              <li>Supervision (Grafana, Prometheus)</li>
+              <li>Firewall, Proxy, Sécurité réseau</li>
+            </ul>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section id="veille" class="container">
-        <h2>Veille technologique</h2>
-        <p>
-            Ma veille technologique porte sur les sujets liés à <strong>la cybersécurité</strong> et à <strong>l’automatisation des infrastructures IT</strong>.
-            Je m’informe régulièrement via des sites spécialisés tels que :
-        </p>
-        <ul class="veille-list">
-            <li><a href="https://www.zdnet.fr/" target="_blank">ZDNet</a> – Actualités informatiques et cybersécurité</li>
-            <li><a href="https://www.thehackersnews.com/" target="_blank">The Hacker News</a> – Vulnérabilités et menaces récentes</li>
-            <li><a href="https://dev.to/" target="_blank">Dev.to</a> – Développement, DevOps et automatisation</li>
-        </ul>
-        <p>
-            Cette veille me permet de rester à jour sur les tendances technologiques et d’adapter mes compétences aux besoins du monde professionnel.
-        </p>
-    </section>
+      <div class="col-md-6 col-lg-3">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title text-primary">⚙️ Virtualisation / Conteneurisation</h5>
+            <ul>
+              <li>VMware, Hyper-V</li>
+              <li>Docker, Docker Compose</li>
+              <li>Infrastructure as Code (IaC)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-    <section id="contact" class="container">
-        <h2>Contact</h2>
-        <p>📧 <a href="mailto:prenom.nom@example.com">prenom.nom@example.com</a></p>
-        <p>🔗 <a href="https://www.linkedin.com/">LinkedIn</a></p>
-    </section>
+      <div class="col-md-6 col-lg-3">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title text-primary">🤖 Automatisation</h5>
+            <ul>
+              <li>Scripts PowerShell / Python</li>
+              <li>Déploiement automatisé</li>
+              <li>Surveillance via scripts</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>© 2025 – Portfolio BTS SIO | Réalisé par un apprenti IT chez Stellantis Borny</p>
-    </footer>
+  <!-- ====== PROJETS & INFRASTRUCTURES ====== -->
+  <section id="projets" class="container py-5 fade-section">
+    <h2 class="border-start border-4 border-primary ps-3 mb-4">Projets & Infrastructures</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">📊 Dashboard Grafana</h5>
+            <p>Création d’un tableau de bord connecté à une base MySQL pour surveiller la production et générer des alertes.</p>
+            <img src="grafana.png" alt="Projet Grafana" class="img-fluid rounded mt-2">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">💾 Sauvegarde automatisée</h5>
+            <p>Script PowerShell pour sauvegarder les bases MySQL et SQL Server à chaud avec plan de restauration documenté.</p>
+            <img src="backup.png" alt="Sauvegarde MySQL" class="img-fluid rounded mt-2">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">🖥️ Infrastructure virtuelle</h5>
+            <p>Déploiement d’un environnement de test virtualisé sous VMware, avec supervision réseau et conteneurisation Docker.</p>
+            <img src="infra.png" alt="Infrastructure VMware" class="img-fluid rounded mt-2">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // --- Basculer entre les thèmes ---
-        const toggle = document.getElementById('theme-toggle');
-        const body = document.body;
+  <!-- ====== VEILLE TECHNOLOGIQUE ====== -->
+  <section id="veille" class="container py-5 fade-section">
+    <h2 class="border-start border-4 border-primary ps-3 mb-4">Veille Technologique</h2>
+    <p>Ma veille technologique porte sur les thèmes suivants :</p>
+    <ul>
+      <li>Infrastructure as Code (Terraform, Ansible)</li>
+      <li>Sécurité des conteneurs Docker et Kubernetes</li>
+      <li>Automatisation du déploiement et CI/CD</li>
+    </ul>
+    <p>Sources principales :</p>
+    <ul>
+      <li><a href="https://www.zdnet.fr/" target="_blank">ZDNet</a></li>
+      <li><a href="https://dev.to/" target="_blank">Dev.to</a></li>
+      <li><a href="https://thehackernews.com/" target="_blank">The Hacker News</a></li>
+    </ul>
+  </section>
 
-        // Charger le thème sauvegardé
-        if (localStorage.getItem('theme') === 'dark') {
-            body.classList.add('dark-mode');
-            toggle.textContent = '☀️';
-        }
+  <!-- ====== PRÉSENTATION ORALE ====== -->
+  <section id="presentation" class="container py-5 fade-section text-center">
+    <h2 class="border-start border-4 border-primary ps-3 mb-4 text-start">Présentation Orale</h2>
+    <p>Retrouvez ici le support de ma présentation orale :</p>
+    <a href="presentation.pdf" class="btn btn-outline-primary mt-3" download>🎤 Télécharger la Présentation</a>
+  </section>
 
-        toggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            const isDark = body.classList.contains('dark-mode');
-            toggle.textContent = isDark ? '☀️' : '🌙';
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        });
-    </script>
+  <!-- ====== CONTACT ====== -->
+  <section id="contact" class="container py-5 fade-section text-center">
+    <h2 class="border-start border-4 border-primary ps-3 mb-4 text-start">Contact</h2>
+    <p>📧 <a href="mailto:prenom.nom@example.com">prenom.nom@example.com</a></p>
+    <p>🔗 <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></p>
+  </section>
+
+  <footer class="text-center bg-dark text-light py-3">
+    © 2025 – Portfolio SISR | Réalisé par un apprenti IT chez Stellantis Borny
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // --- MODE SOMBRE / CLAIR ---
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    if (localStorage.getItem('theme') === 'dark') {
+      body.dataset.bsTheme = 'dark';
+      toggle.textContent = '☀️';
+    }
+
+    toggle.addEventListener('click', () => {
+      const isDark = body.dataset.bsTheme === 'dark';
+      body.dataset.bsTheme = isDark ? 'light' : 'dark';
+      toggle.textContent = isDark ? '🌙' : '☀️';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+
+    // --- ANIMATION SCROLL ---
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    });
+    document.querySelectorAll('.fade-section').forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
