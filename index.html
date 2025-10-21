@@ -1,197 +1,225 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Portfolio SISR – Apprenti IT | BTS SIO Robert Schuman</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Ton style -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body data-bs-theme="light">
+<body>
+  <!-- THEME TOGGLE -->
+  <button id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Basculer thème clair/sombre">🌙</button>
 
-  <!-- ====== BOUTON MODE SOMBRE ====== -->
-  <div class="theme-toggle" id="theme-toggle" title="Changer de thème">🌙</div>
-
-  <!-- ====== ACCUEIL ====== -->
-  <header class="text-center py-5 bg-gradient text-light">
-    <img src="profil.jpg" alt="Photo de profil" class="profile-pic mb-3">
-    <h1 class="fw-bold">Portfolio SISR – Apprenti IT</h1>
-    <p class="lead">Étudiant en <strong>BTS SIO</strong> à <strong>Robert Schuman</strong> | Alternant chez <strong>Stellantis Borny</strong></p>
-    <p class="fst-italic">"Ce site a été conçu pour présenter mon parcours, mes compétences et mes réalisations dans le domaine des systèmes et réseaux."</p>
-    <a href="cv.pdf" class="btn btn-light mt-3 fw-bold" download>📄 Télécharger mon CV</a>
+  <!-- HEADER / ACCUEIL -->
+  <header class="header-section text-center py-5">
+    <div class="container">
+      <img src="profil.jpg" alt="Photo de profil" class="profile-pic mb-3" onerror="this.style.visibility='hidden'">
+      <h1 class="display-6 fw-bold">Portfolio SISR — Apprenti IT</h1>
+      <p class="lead mb-2">Étudiant en <strong>BTS SIO</strong> à <strong>Robert Schuman</strong> — Alternant chez <strong>Stellantis Borny</strong></p>
+      <p class="mb-3 fst-italic">Ce site présente mes compétences SISR, mes projets d'infrastructure et ma veille technologique.</p>
+      <a href="cv.pdf" class="btn btn-primary btn-lg me-2" download>📄 Télécharger mon CV</a>
+      <a href="#presentation" class="btn btn-outline-primary btn-lg">🎤 Support d'oral</a>
+    </div>
   </header>
 
-  <!-- ====== NAVBAR ====== -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#accueil">Portfolio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <a class="navbar-brand fw-bold" href="#">Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Basculer la navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <div class="collapse navbar-collapse justify-content-center" id="navMenu">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projets">Projets & Infrastructures</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projets">Projets & Infra</a></li>
           <li class="nav-item"><a class="nav-link" href="#veille">Veille</a></li>
-          <li class="nav-item"><a class="nav-link" href="#presentation">Présentation Orale</a></li>
+          <li class="nav-item"><a class="nav-link" href="#presentation">Présentation</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- ====== COMPÉTENCES TECHNIQUES (SISR) ====== -->
+  <!-- COMPÉTENCES (PÔLES SISR) -->
   <section id="competences" class="container py-5 fade-section">
-    <h2 class="border-start border-4 border-primary ps-3 mb-4">Compétences Techniques (Pôle SISR)</h2>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="card shadow-sm h-100">
+    <h2 class="section-title">Compétences Techniques — Pôle SISR</h2>
+
+    <div class="row gy-4">
+      <div class="col-12 col-md-6 col-lg-3">
+        <article class="card h-100">
           <div class="card-body">
-            <h5 class="card-title text-primary">🖥️ Systèmes</h5>
+            <h3 class="card-title">Systèmes</h3>
             <ul>
-              <li>Administration Windows & Linux</li>
-              <li>Active Directory, GPO</li>
+              <li>Administration Windows Server & Linux</li>
+              <li>Active Directory, GPO, gestion comptes</li>
               <li>Scripts PowerShell / Bash</li>
             </ul>
           </div>
-        </div>
+        </article>
       </div>
 
-      <div class="col-md-6 col-lg-3">
-        <div class="card shadow-sm h-100">
+      <div class="col-12 col-md-6 col-lg-3">
+        <article class="card h-100">
           <div class="card-body">
-            <h5 class="card-title text-primary">🌐 Réseaux</h5>
+            <h3 class="card-title">Réseaux</h3>
             <ul>
-              <li>Configuration VLAN, DHCP, DNS</li>
-              <li>Supervision (Grafana, Prometheus)</li>
-              <li>Firewall, Proxy, Sécurité réseau</li>
+              <li>VLAN, routage, DNS, DHCP</li>
+              <li>Firewalling, VPN, sécurité perimétrique</li>
+              <li>Monitoring (Grafana / Prometheus)</li>
             </ul>
           </div>
-        </div>
+        </article>
       </div>
 
-      <div class="col-md-6 col-lg-3">
-        <div class="card shadow-sm h-100">
+      <div class="col-12 col-md-6 col-lg-3">
+        <article class="card h-100">
           <div class="card-body">
-            <h5 class="card-title text-primary">⚙️ Virtualisation / Conteneurisation</h5>
+            <h3 class="card-title">Virtualisation / Conteneurs</h3>
             <ul>
               <li>VMware, Hyper-V</li>
-              <li>Docker, Docker Compose</li>
-              <li>Infrastructure as Code (IaC)</li>
+              <li>Docker / Compose, introduction Kubernetes</li>
+              <li>IaC : Terraform / Ansible (notions)</li>
             </ul>
           </div>
-        </div>
+        </article>
       </div>
 
-      <div class="col-md-6 col-lg-3">
-        <div class="card shadow-sm h-100">
+      <div class="col-12 col-md-6 col-lg-3">
+        <article class="card h-100">
           <div class="card-body">
-            <h5 class="card-title text-primary">🤖 Automatisation</h5>
+            <h3 class="card-title">Automatisation</h3>
             <ul>
-              <li>Scripts PowerShell / Python</li>
-              <li>Déploiement automatisé</li>
-              <li>Surveillance via scripts</li>
+              <li>Automatisation des déploiements</li>
+              <li>Scripting, CI/CD (ex : GitHub Actions)</li>
+              <li>Backups automatisés, plan de restauration</li>
             </ul>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ====== PROJETS & INFRASTRUCTURES ====== -->
+  <!-- PROJETS & INFRASTRUCTURES (études de cas) -->
   <section id="projets" class="container py-5 fade-section">
-    <h2 class="border-start border-4 border-primary ps-3 mb-4">Projets & Infrastructures</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100">
+    <h2 class="section-title">Projets & Infrastructures — Études de cas</h2>
+
+    <div class="row gy-4 projects-grid">
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="card h-100">
           <div class="card-body">
-            <h5 class="card-title">📊 Dashboard Grafana</h5>
-            <p>Création d’un tableau de bord connecté à une base MySQL pour surveiller la production et générer des alertes.</p>
-            <img src="grafana.png" alt="Projet Grafana" class="img-fluid rounded mt-2">
+            <h3 class="card-title">Dashboard Grafana — Supervision</h3>
+            <p class="card-text">Tableau de bord connecté à une base MySQL pour surveiller KPIs de production et envoyer des alertes.</p>
+            <img src="grafana.png" alt="Capture Grafana" class="img-fluid rounded mt-2" onerror="this.style.display='none'">
+            <p class="mt-2 small text-muted">Technos : MySQL, Grafana, alerting.</p>
           </div>
-        </div>
+        </article>
       </div>
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100">
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="card h-100">
           <div class="card-body">
-            <h5 class="card-title">💾 Sauvegarde automatisée</h5>
-            <p>Script PowerShell pour sauvegarder les bases MySQL et SQL Server à chaud avec plan de restauration documenté.</p>
-            <img src="backup.png" alt="Sauvegarde MySQL" class="img-fluid rounded mt-2">
+            <h3 class="card-title">Sauvegarde automatisée — MySQL</h3>
+            <p class="card-text">Script PowerShell / Bash pour sauvegardes à chaud, rotation et plan de restauration documenté.</p>
+            <img src="backup.png" alt="Schéma sauvegarde" class="img-fluid rounded mt-2" onerror="this.style.display='none'">
+            <p class="mt-2 small text-muted">Technos : PowerShell, scripts, politique de rétention.</p>
           </div>
-        </div>
+        </article>
       </div>
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100">
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="card h-100">
           <div class="card-body">
-            <h5 class="card-title">🖥️ Infrastructure virtuelle</h5>
-            <p>Déploiement d’un environnement de test virtualisé sous VMware, avec supervision réseau et conteneurisation Docker.</p>
-            <img src="infra.png" alt="Infrastructure VMware" class="img-fluid rounded mt-2">
+            <h3 class="card-title">Infra virtualisée — Lab VMware</h3>
+            <p class="card-text">Environnement de test virtualisé avec supervision réseau et déploiement de conteneurs pour tests applicatifs.</p>
+            <img src="infra.png" alt="Infrastructure" class="img-fluid rounded mt-2" onerror="this.style.display='none'">
+            <p class="mt-2 small text-muted">Technos : VMware, Docker, VLAN, scripts d'automatisation.</p>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ====== VEILLE TECHNOLOGIQUE ====== -->
+  <!-- VEILLE TECHNOLOGIQUE -->
   <section id="veille" class="container py-5 fade-section">
-    <h2 class="border-start border-4 border-primary ps-3 mb-4">Veille Technologique</h2>
-    <p>Ma veille technologique porte sur les thèmes suivants :</p>
-    <ul>
-      <li>Infrastructure as Code (Terraform, Ansible)</li>
-      <li>Sécurité des conteneurs Docker et Kubernetes</li>
-      <li>Automatisation du déploiement et CI/CD</li>
+    <h2 class="section-title">Veille technologique</h2>
+    <p>Thèmes suivis régulièrement :</p>
+    <ul class="veille-list">
+      <li>Infrastructure as Code : Terraform / Ansible</li>
+      <li>Sécurité des conteneurs (Docker / Kubernetes)</li>
+      <li>CI/CD & automatisation des pipelines</li>
+      <li>Observabilité et monitoring</li>
     </ul>
-    <p>Sources principales :</p>
-    <ul>
-      <li><a href="https://www.zdnet.fr/" target="_blank">ZDNet</a></li>
-      <li><a href="https://dev.to/" target="_blank">Dev.to</a></li>
-      <li><a href="https://thehackernews.com/" target="_blank">The Hacker News</a></li>
-    </ul>
+    <p>Sources : <a href="https://dev.to" target="_blank" rel="noopener">Dev.to</a>, <a href="https://www.zdnet.fr" target="_blank" rel="noopener">ZDNet</a>, <a href="https://thehackernews.com" target="_blank" rel="noopener">The Hacker News</a></p>
   </section>
 
-  <!-- ====== PRÉSENTATION ORALE ====== -->
+  <!-- PRÉSENTATION ORALE -->
   <section id="presentation" class="container py-5 fade-section text-center">
-    <h2 class="border-start border-4 border-primary ps-3 mb-4 text-start">Présentation Orale</h2>
-    <p>Retrouvez ici le support de ma présentation orale :</p>
-    <a href="presentation.pdf" class="btn btn-outline-primary mt-3" download>🎤 Télécharger la Présentation</a>
+    <h2 class="section-title">Présentation Orale — Support</h2>
+    <p>Télécharge le support de ma présentation (format PDF) pour la partie orale.</p>
+    <a href="presentation.pdf" class="btn btn-outline-primary btn-lg" download>🎤 Télécharger la présentation</a>
   </section>
 
-  <!-- ====== CONTACT ====== -->
+  <!-- CONTACT -->
   <section id="contact" class="container py-5 fade-section text-center">
-    <h2 class="border-start border-4 border-primary ps-3 mb-4 text-start">Contact</h2>
+    <h2 class="section-title">Contact</h2>
     <p>📧 <a href="mailto:prenom.nom@example.com">prenom.nom@example.com</a></p>
-    <p>🔗 <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></p>
+    <p>🔗 <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></p>
   </section>
 
-  <footer class="text-center bg-dark text-light py-3">
-    © 2025 – Portfolio SISR | Réalisé par un apprenti IT chez Stellantis Borny
+  <footer class="py-3 text-center footer-custom">
+    © <span id="year"></span> — Portfolio SISR | Apprenti IT — Stellantis Borny — BTS SIO Robert Schuman
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Script theme + animation -->
   <script>
-    // --- MODE SOMBRE / CLAIR ---
-    const toggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    if (localStorage.getItem('theme') === 'dark') {
-      body.dataset.bsTheme = 'dark';
+    // Fill year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle (appliqué sur <html> via data-theme)
+    const htmlEl = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+
+    // Charger préférence
+    const saved = localStorage.getItem('portfolio-theme');
+    if (saved === 'dark') {
+      htmlEl.setAttribute('data-theme', 'dark');
       toggle.textContent = '☀️';
+      toggle.setAttribute('aria-pressed','true');
+    } else {
+      htmlEl.setAttribute('data-theme', 'light');
+      toggle.textContent = '🌙';
+      toggle.setAttribute('aria-pressed','false');
     }
 
     toggle.addEventListener('click', () => {
-      const isDark = body.dataset.bsTheme === 'dark';
-      body.dataset.bsTheme = isDark ? 'light' : 'dark';
-      toggle.textContent = isDark ? '🌙' : '☀️';
-      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      const current = htmlEl.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      htmlEl.setAttribute('data-theme', next);
+      localStorage.setItem('portfolio-theme', next);
+      toggle.textContent = next === 'dark' ? '☀️' : '🌙';
+      toggle.setAttribute('aria-pressed', next === 'dark' ? 'true' : 'false');
     });
 
-    // --- ANIMATION SCROLL ---
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+    // IntersectionObserver pour apparition des sections (fade-in)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
       });
-    });
-    document.querySelectorAll('.fade-section').forEach(section => observer.observe(section));
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-section').forEach(sec => observer.observe(sec));
   </script>
 </body>
 </html>
