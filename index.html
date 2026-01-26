@@ -235,8 +235,6 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            cursor: pointer;
-            text-decoration: none;
             color: var(--text-primary);
             display: block;
         }
@@ -262,10 +260,6 @@
             border-color: var(--accent);
         }
 
-        .skill:active {
-            transform: translateY(-8px) scale(1.01);
-        }
-
         .skill-icon {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
@@ -279,8 +273,8 @@
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
         }
 
@@ -336,6 +330,7 @@
             position: relative;
             z-index: 1;
             line-height: 1.8;
+            font-size: 0.95rem;
         }
 
         .project-tag {
@@ -410,6 +405,10 @@
             nav li {
                 margin: 0.5rem 0;
             }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -450,50 +449,80 @@
     <section id="competences" class="container">
         <h2>Compétences</h2>
         <div class="skills">
-            <a href="pdf/windows-linux.pdf" class="skill" target="_blank">
+            <div class="skill">
                 <span class="skill-icon">🖥️</span>
                 <span class="skill-text">Administration Windows & Linux</span>
-            </a>
-            <a href="pdf/reseaux-securite.pdf" class="skill" target="_blank">
+            </div>
+            <div class="skill">
                 <span class="skill-icon">🌐</span>
                 <span class="skill-text">Réseaux & Sécurité</span>
-            </a>
-            <a href="pdf/base-de-donnees.pdf" class="skill" target="_blank">
+            </div>
+            <div class="skill">
                 <span class="skill-icon">🗃️</span>
                 <span class="skill-text">Base de données (MySQL, SQL Server)</span>
-            </a>
-            <a href="pdf/developpement-web.pdf" class="skill" target="_blank">
+            </div>
+            <div class="skill">
                 <span class="skill-icon">💻</span>
                 <span class="skill-text">Développement Web (HTML, CSS, JS, PHP)</span>
-            </a>
-            <a href="pdf/automatisation.pdf" class="skill" target="_blank">
+            </div>
+            <div class="skill">
                 <span class="skill-icon">⚙️</span>
                 <span class="skill-text">Automatisation (PowerShell, Bash)</span>
-            </a>
-            <a href="pdf/supervision.pdf" class="skill" target="_blank">
+            </div>
+            <div class="skill">
                 <span class="skill-icon">📊</span>
                 <span class="skill-text">Supervision (Grafana, Prometheus)</span>
-            </a>
+            </div>
         </div>
     </section>
 
     <section id="projets" class="container">
         <h2>Projets</h2>
         <div class="projects">
-            <a href="pdf/dashboard-grafana.pdf" class="project" target="_blank">
-                <h3>📊 Dashboard Grafana</h3>
-                <p>Création d'un tableau de bord connecté à une base MySQL pour suivre l'état de production et les alertes en temps réel.</p>
-                <span class="project-tag">Monitoring</span>
+            <a href="pdf/glpi.pdf" class="project" target="_blank">
+                <h3>🎫 GLPI</h3>
+                <p>Déploiement et gestion du système de ticketing GLPI pour le suivi des incidents et demandes IT.</p>
+                <span class="project-tag">Ticketing</span>
             </a>
-            <a href="pdf/sauvegarde-mysql.pdf" class="project" target="_blank">
-                <h3>💾 Sauvegarde MySQL automatisée</h3>
-                <p>Script PowerShell pour sauvegarder automatiquement la base MySQL du serveur et générer un plan de restauration.</p>
+            <a href="pdf/veeam.pdf" class="project" target="_blank">
+                <h3>💾 VEEAM</h3>
+                <p>Mise en place de solutions de sauvegarde et restauration avec Veeam Backup & Replication.</p>
+                <span class="project-tag">Backup</span>
+            </a>
+            <a href="pdf/rds.pdf" class="project" target="_blank">
+                <h3>🖥️ RDS</h3>
+                <p>Configuration et administration de Remote Desktop Services pour l'accès à distance sécurisé.</p>
+                <span class="project-tag">Infrastructure</span>
+            </a>
+            <a href="pdf/shell-scripting.pdf" class="project" target="_blank">
+                <h3>📜 Shell Scripting</h3>
+                <p>Développement de scripts Bash et PowerShell pour l'automatisation des tâches système.</p>
                 <span class="project-tag">Automatisation</span>
             </a>
-            <a href="pdf/gestion-parc.pdf" class="project" target="_blank">
-                <h3>🖥️ Gestion du parc informatique</h3>
-                <p>Développement d'un inventaire automatisé des postes et supervision du réseau de l'usine Stellantis.</p>
-                <span class="project-tag">Infrastructure</span>
+            <a href="pdf/prtg.pdf" class="project" target="_blank">
+                <h3>📡 Supervision PRTG</h3>
+                <p>Implémentation de la supervision réseau avec PRTG Network Monitor pour le monitoring en temps réel.</p>
+                <span class="project-tag">Monitoring</span>
+            </a>
+            <a href="pdf/wds.pdf" class="project" target="_blank">
+                <h3>💿 WDS</h3>
+                <p>Configuration de Windows Deployment Services pour le déploiement automatisé des postes de travail.</p>
+                <span class="project-tag">Déploiement</span>
+            </a>
+            <a href="pdf/serveur-fichiers.pdf" class="project" target="_blank">
+                <h3>📁 Serveur de fichiers</h3>
+                <p>Administration d'un serveur de fichiers Windows avec gestion des quotas et permissions NTFS.</p>
+                <span class="project-tag">Stockage</span>
+            </a>
+            <a href="pdf/debian.pdf" class="project" target="_blank">
+                <h3>🐧 Debian</h3>
+                <p>Installation et configuration de serveurs Debian pour divers services (Web, DNS, DHCP).</p>
+                <span class="project-tag">Linux</span>
+            </a>
+            <a href="pdf/active-directory.pdf" class="project" target="_blank">
+                <h3>🔐 Active Directory</h3>
+                <p>Gestion complète d'Active Directory : utilisateurs, GPO, sécurité et stratégies de groupe.</p>
+                <span class="project-tag">Administration</span>
             </a>
         </div>
     </section>
@@ -516,8 +545,9 @@
 
     <section id="contact" class="container">
         <h2>Contact</h2>
-        <p>📧 <a href="mailto:prenom.nom@example.com">prenom.nom@example.com</a></p>
-        <p>🔗 <a href="https://www.linkedin.com/">LinkedIn</a></p>
+        <p>📧 <a href="mailto:kevincirillo4@gmail.com">kevincirillo4@gmail.com</a></p>
+        <p>🔗 <a href="https://www.linkedin.com/in/kevin-cirillo-4543b633a/">LinkedIn</a></p>
+        <p>📱 Téléphone : 06 21 85 93 27</p>
     </section>
 
     <footer>
