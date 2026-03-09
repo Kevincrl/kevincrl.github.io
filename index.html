@@ -32,6 +32,7 @@
             overflow-x: hidden;
         }
 
+        /* ===================== THEME TOGGLE ===================== */
         .theme-toggle {
             position: fixed;
             top: 20px;
@@ -53,6 +54,69 @@
         .theme-toggle:hover {
             transform: scale(1.1);
             box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        /* Animation "spin + bounce" du bouton au clic */
+        .theme-toggle.clicked {
+            animation: toggleBounce 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+        }
+
+        @keyframes toggleBounce {
+            0%   { transform: scale(1) rotate(0deg); }
+            30%  { transform: scale(1.4) rotate(180deg); }
+            60%  { transform: scale(0.85) rotate(340deg); }
+            100% { transform: scale(1) rotate(360deg); }
+        }
+
+        /* ===================== RIPPLE OVERLAY ===================== */
+        #theme-ripple {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        .ripple-circle {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            opacity: 0.18;
+            animation: rippleExpand 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        @keyframes rippleExpand {
+            0%   { transform: scale(0);   opacity: 0.35; }
+            60%  { opacity: 0.18; }
+            100% { transform: scale(1);   opacity: 0; }
+        }
+
+        /* Flash blanc/noir qui couvre tout puis disparaît */
+        .theme-flash {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 998;
+            opacity: 0;
+            animation: flashFade 0.55s ease forwards;
+        }
+
+        @keyframes flashFade {
+            0%   { opacity: 0.22; }
+            100% { opacity: 0; }
+        }
+
+        /* Transition douce de toutes les propriétés de couleur sur le body */
+        body.theme-transitioning,
+        body.theme-transitioning * {
+            transition:
+                background-color 0.45s ease,
+                color 0.45s ease,
+                border-color 0.45s ease,
+                box-shadow 0.45s ease !important;
         }
 
         body.light-mode {
@@ -81,7 +145,6 @@
             overflow: hidden;
         }
 
-        /* Canvas pour les particules */
         #particles-canvas {
             position: absolute;
             top: 0;
@@ -91,7 +154,6 @@
             z-index: 0;
         }
 
-        /* Orbes lumineux flottants */
         .orb {
             position: absolute;
             border-radius: 50%;
@@ -149,7 +211,6 @@
             100% { transform: translate(0px, 0px) scale(1); }
         }
 
-        /* Grille animée */
         .grid-overlay {
             position: absolute;
             inset: 0;
@@ -166,7 +227,6 @@
             100% { background-position: 60px 60px; }
         }
 
-        /* Lignes diagonales qui traversent */
         .beam {
             position: absolute;
             width: 2px;
@@ -205,7 +265,6 @@
             100% { opacity: 0; transform: rotate(20deg) translateY(100%); }
         }
 
-        /* ===================== HEADER CONTENT ===================== */
         .header-content {
             text-align: center;
             z-index: 1;
@@ -267,7 +326,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        /* ===================== RESTE DU SITE (inchangé) ===================== */
         nav {
             position: sticky;
             top: 0;
@@ -481,22 +539,18 @@
     </style>
 </head>
 <body>
+    <!-- Overlay pour l'effet de ripple -->
+    <div id="theme-ripple"></div>
+
     <div class="theme-toggle" id="theme-toggle" title="Changer de thème">🌙</div>
 
     <header>
-        <!-- Canvas particules -->
         <canvas id="particles-canvas"></canvas>
-
-        <!-- Grille animée -->
         <div class="grid-overlay"></div>
-
-        <!-- Orbes lumineux -->
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
         <div class="orb orb-3"></div>
         <div class="orb orb-4"></div>
-
-        <!-- Faisceaux lumineux -->
         <div class="beam beam-1"></div>
         <div class="beam beam-2"></div>
         <div class="beam beam-3"></div>
@@ -651,16 +705,114 @@
     </footer>
 
     <script>
-        /* ===================== THÈME ===================== */
+        /* ===================== THÈME AVEC EFFETS ===================== */
         const toggle = document.getElementById('theme-toggle');
         const body = document.body;
+        const rippleContainer = document.getElementById('theme-ripple');
 
         if (localStorage.getItem('theme') === 'light') {
             body.classList.add('light-mode');
             toggle.textContent = '🌙';
         }
 
+        function triggerThemeEffect(isGoingLight) {
+            // 1. Animation spin/bounce du bouton
+            toggle.classList.remove('clicked');
+            void toggle.offsetWidth; // reflow pour relancer l'animation
+            toggle.classList.add('clicked');
+            setTimeout(() => toggle.classList.remove('clicked'), 500);
+
+            // 2. Flash plein écran (blanc vers light, noir vers dark)
+            const flash = document.createElement('div');
+            flash.className = 'theme-flash';
+            flash.style.background = isGoingLight
+                ? 'radial-gradient(circle at top right, #fffbe6, #e0f2fe)'
+                : 'radial-gradient(circle at top right, #1e3a5f, #0f172a)';
+            body.appendChild(flash);
+            setTimeout(() => flash.remove(), 600);
+
+            // 3. Cercles de ripple partant du bouton (position top-right)
+            const btnRect = toggle.getBoundingClientRect();
+            const originX = btnRect.left + btnRect.width / 2;
+            const originY = btnRect.top + btnRect.height / 2;
+
+            // Rayon max pour couvrir tout l'écran
+            const maxRadius = Math.hypot(
+                Math.max(originX, window.innerWidth - originX),
+                Math.max(originY, window.innerHeight - originY)
+            ) * 2.2;
+
+            const rippleCount = 3;
+            for (let i = 0; i < rippleCount; i++) {
+                setTimeout(() => {
+                    const circle = document.createElement('div');
+                    circle.className = 'ripple-circle';
+                    circle.style.width  = maxRadius + 'px';
+                    circle.style.height = maxRadius + 'px';
+                    circle.style.left   = (originX - maxRadius / 2) + 'px';
+                    circle.style.top    = (originY - maxRadius / 2) + 'px';
+                    circle.style.background = isGoingLight
+                        ? `radial-gradient(circle, #fbbf24, #60a5fa)`
+                        : `radial-gradient(circle, #1e40af, #4c1d95)`;
+                    circle.style.animationDuration = (0.7 + i * 0.12) + 's';
+                    circle.style.animationDelay = (i * 0.08) + 's';
+                    rippleContainer.appendChild(circle);
+                    setTimeout(() => circle.remove(), 1000 + i * 200);
+                }, i * 60);
+            }
+
+            // 4. Étoiles/étincelles qui jaillissent du bouton
+            const sparkColors = isGoingLight
+                ? ['#fbbf24', '#f97316', '#fde68a', '#fff']
+                : ['#60a5fa', '#a78bfa', '#34d399', '#e2e8f0'];
+
+            for (let i = 0; i < 12; i++) {
+                const spark = document.createElement('div');
+                const angle = (i / 12) * 360;
+                const distance = 60 + Math.random() * 60;
+                const size = 4 + Math.random() * 5;
+
+                spark.style.cssText = `
+                    position: fixed;
+                    width: ${size}px;
+                    height: ${size}px;
+                    border-radius: 50%;
+                    background: ${sparkColors[i % sparkColors.length]};
+                    left: ${originX}px;
+                    top: ${originY}px;
+                    pointer-events: none;
+                    z-index: 1001;
+                    box-shadow: 0 0 6px ${sparkColors[i % sparkColors.length]};
+                    transition: none;
+                `;
+
+                body.appendChild(spark);
+
+                const rad = (angle * Math.PI) / 180;
+                const tx = Math.cos(rad) * distance;
+                const ty = Math.sin(rad) * distance;
+
+                requestAnimationFrame(() => {
+                    spark.style.transition = `transform ${0.4 + Math.random() * 0.2}s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease`;
+                    spark.style.transform = `translate(${tx}px, ${ty}px) scale(0)`;
+                    spark.style.opacity = '0';
+                });
+
+                setTimeout(() => spark.remove(), 700);
+            }
+        }
+
         toggle.addEventListener('click', () => {
+            const isGoingLight = !body.classList.contains('light-mode');
+
+            // Activer les transitions CSS
+            body.classList.add('theme-transitioning');
+            setTimeout(() => body.classList.remove('theme-transitioning'), 500);
+
+            // Lancer les effets visuels
+            triggerThemeEffect(isGoingLight);
+
+            // Changer le thème
             body.classList.toggle('light-mode');
             const isLight = body.classList.contains('light-mode');
             toggle.textContent = isLight ? '🌙' : '☀️';
@@ -718,7 +870,6 @@
             }
 
             update() {
-                // Répulsion souris
                 if (mouse.x !== null) {
                     const dx = this.x - mouse.x;
                     const dy = this.y - mouse.y;
@@ -730,7 +881,6 @@
                     }
                 }
 
-                // Friction douce
                 this.vx *= 0.98;
                 this.vy *= 0.98;
 
